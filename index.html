@@ -3,124 +3,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>de Vries Marine</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      background: url('dredge_bucket.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-    nav {
-      background-color: rgba(0, 51, 102, 0.9);
-      padding: 10px 20px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    .countdown {
-      text-align: center;
-      font-size: 2em;
-      margin: 50px 0;
-    }
-  </style>
 </head>
 <body>
   <nav>
-    <a href="#about">About</a>
-    <a href="#solutions">Solutions</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#compliance">Compliance</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="products.html">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="compliance.html">Compliance</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <header>
+  <div class="overlay">
     <h1>de Vries Marine</h1>
     <p>Lubrication Solutions for Mechanical Dredging</p>
-  </header>
-
-  <div class="countdown">
-    <p>Website Launches In:</p>
-    <p id="timer">Loading...</p>
+    <div class="countdown" id="countdown">Loading countdown...</div>
   </div>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>de Vries Marine specializes in delivering advanced lubrication systems designed specifically for mechanical dredging operations. We focus on improving performance and reducing environmental impact.</p>
-  </section>
-
-  <section id="solutions">
-    <h2>Our Solutions</h2>
-    <p>We offer custom-designed automatic lubrication systems for clamshell buckets—optimized for environmental, silt, and rock-type dredging.</p>
-  </section>
-
-  <section id="products">
-    <h2>Products</h2>
-    <ul>
-      <li>Automatic Grease Lubrication Systems for Clamshell Buckets</li>
-      <li>Eco-Friendly Greases (compliant with US and international standards)</li>
-    </ul>
-  </section>
-
-  <section id="gallery">
-    <h2>Image Gallery</h2>
-    <img src="https://via.placeholder.com/400x250?text=Clamshell+Bucket" alt="Clamshell Bucket" />
-    <img src="https://via.placeholder.com/400x250?text=Lubrication+System" alt="Lubrication System" />
-    <img src="https://via.placeholder.com/400x250?text=Marine+Dredging" alt="Marine Dredging" />
-  </section>
-
-  <section id="compliance">
-    <h2>Compliance & Sustainability</h2>
-    <p>Our products meet stringent U.S. and international environmental regulations, supporting sustainable marine operations.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Request a Quote</h2>
-    <form action="https://formspree.io/f/yourcode" method="POST">
-      <label for="name">Name:</label><br/>
-      <input type="text" id="name" name="name" required><br/>
-      <label for="email">Email:</label><br/>
-      <input type="email" id="email" name="email" required><br/>
-      <label for="company">Company:</label><br/>
-      <input type="text" id="company" name="company"><br/>
-      <label for="type">Dredging Type:</label><br/>
-      <select name="type" id="type">
-        <option value="environmental">Environmental</option>
-        <option value="silt">Silt</option>
-        <option value="rock">Rock</option>
-      </select><br/>
-      <label for="message">Message:</label><br/>
-      <textarea id="message" name="message" rows="4"></textarea><br/>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 de Vries Marine. All rights reserved.</p>
-  </footer>
-
   <script>
-    const countdown = () => {
-      const launchDate = new Date("July 1, 2025 00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    const launchDate = new Date("July 1, 2025 00:00:00").getTime();
+
+    const updateCountdown = () => {
       const now = new Date().getTime();
-      const timeLeft = launchDate - now;
+      const distance = launchDate - now;
 
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      if (distance <= 0) {
+        countdownEl.style.display = 'none';
+        return;
+      }
 
-      document.getElementById("timer").innerHTML = 
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     };
 
-    setInterval(countdown, 1000);
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
