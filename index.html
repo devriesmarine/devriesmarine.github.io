@@ -6,12 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>de Vries Marine</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: url('dredge_bucket.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    nav {
+      background-color: rgba(0, 51, 102, 0.9);
+      padding: 10px 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .countdown {
+      text-align: center;
+      font-size: 2em;
+      margin: 50px 0;
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#compliance">Compliance</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
     <h1>de Vries Marine</h1>
     <p>Lubrication Solutions for Mechanical Dredging</p>
   </header>
+
+  <div class="countdown">
+    <p>Website Launches In:</p>
+    <p id="timer">Loading...</p>
+  </div>
 
   <section id="about">
     <h2>About Us</h2>
@@ -67,5 +104,23 @@
   <footer>
     <p>&copy; 2025 de Vries Marine. All rights reserved.</p>
   </footer>
+
+  <script>
+    const countdown = () => {
+      const launchDate = new Date("July 1, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = launchDate - now;
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerHTML = 
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    };
+
+    setInterval(countdown, 1000);
+  </script>
 </body>
 </html>
