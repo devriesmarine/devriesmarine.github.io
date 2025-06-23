@@ -3,54 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>de Vries Marine | Under Construction</title>
+  <title>Solutions | de Vries Marine</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="products.html">Products</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="compliance.html">Compliance</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="overlay">
-    <h1>Solutions</h1>
-    <p>Our site is currently under construction.<br>
-       Please check back soon!</p>
-    <div class="countdown" id="countdown">Loading countdown...</div>
+  <div class="background-container">
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html" class="active">Solutions</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <section class="page-header">
+        <h1>Our Solutions for Mechanical Dredging</h1>
+      </section>
+
+      <section class="text-block">
+        <p>
+          At <strong>de Vries Marine</strong>, we collaborate closely with mechanical dredge operators and equipment owners to deliver measurable performance and profitability gains. Our integrated lubrication solutions are engineered to maximize uptime, reduce unscheduled maintenance, and extend component life—all of which significantly reduce operating costs.
+        </p>
+
+        <p>
+          Our expertise spans over 25 years of working with leading lubrication technologies, including <strong>SKF's Lincoln automatic lubrication systems</strong> and advanced roller and plain bearing strategies. We've seen firsthand how proactive lubrication transforms operations—helping contractors stay on schedule and within budget, even in harsh marine environments.
+        </p>
+      </section>
+
+      <section class="text-block">
+        <h2>How We Improve Dredging Operations</h2>
+        <ul>
+          <li><strong>Reduce Downtime:</strong> Continuous, automated lubrication eliminates manual greasing delays and failures due to human error.</li>
+          <li><strong>Lower Maintenance Costs:</strong> Equipment runs cleaner, longer, and with fewer breakdowns, saving on labor and part replacement.</li>
+          <li><strong>Extend Equipment Life:</strong> Consistent lubrication prevents premature wear in high-load clamshell buckets and dredging arms.</li>
+          <li><strong>Enhance Safety:</strong> Automated systems reduce the need for technicians to work around moving machinery or in hazardous environments.</li>
+        </ul>
+      </section>
+
+      <section class="text-block">
+        <h2>Proven Profitability: Real Value Quantified</h2>
+        <p>
+          Our customers see dramatic improvements in operational profitability. Here's how we quantify the value:
+        </p>
+        <ul>
+          <li>
+            <strong>ROI Calculations:</strong> Compare the cost of our system and lubricants against avoided downtime, reduced maintenance, and extended service intervals.
+          </li>
+          <li>
+            <strong>Productivity Uplift:</strong> Operators often gain 5–15% more uptime annually, equating to hundreds of additional productive hours.
+          </li>
+          <li>
+            <strong>Customized Grease Formulations:</strong> In partnership with a premier lubricant developer, we supply application-specific greases optimized for silt, rock, and environmental conditions—delivering friction reduction and seal integrity tailored to your job.
+          </li>
+          <li>
+            <strong>Lifecycle Cost Analysis:</strong> We help you track total cost of ownership and demonstrate how lubrication investments pay for themselves many times over.
+          </li>
+        </ul>
+      </section>
+
+      <section class="cta-section">
+        <h3>Let's Talk Performance</h3>
+        <p>
+          Whether you're looking to modernize an aging dredge fleet or maximize the output of new equipment, our team is ready to help you model the financial impact of improved lubrication. 
+        </p>
+        <a href="contact.html" class="cta-button">Contact Us for a Value Assessment</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 de Vries Marine. All rights reserved.</p>
+    </footer>
   </div>
-
-  <script>
-    const countdownEl = document.getElementById("countdown");
-    const launchDate = new Date("July 1, 2025 00:00:00").getTime();
-
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-	if (distance <= 0) {
-        countdownEl.style.display = 'none';
-        return;
-    }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
-  <footer>
-	<a>Copyright © 2025 de Vries Marine, Co</a>
-  </footer>
 </html>
