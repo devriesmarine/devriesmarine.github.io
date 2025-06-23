@@ -1,69 +1,100 @@
 html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-    }
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
 
-    body {
-      background: url('Dredge_Bucket.png') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+body {
+  background: url('Dredge_Bucket.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 80px; /* Ensure nav doesn't overlap content */
+  padding-bottom: 60px; /* Ensure footer space */
+}
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-	  width: 40%;
-      padding: 2rem;
-      border-radius: 10px;
-    }
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
 
-    .countdown {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-	
-	nav {
-	  background-color: rgba(0, 0, 0, 0.6);
-	  padding: 1rem;
-	  position: fixed;
-	  width: 100%;
-	  top: 0;
-	  left: 0;
-	}
+.countdown {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
-	nav a {
-	  color: white;
-	  margin: 0 15px;
-	  text-decoration: none;
-	  font-weight: bold;
-	}
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 1000;
+}
 
-	footer {
-	  background-color: rgba(0, 0, 0, 0.6);
-	  padding: 1rem;
-	  position: fixed;
-	  width: 100%;
-	  bottom: 0;
-	  left: 0;
-	}
-	
-	footer a {
-	  color: white;
-	  font-size: 0 13px;
-	  text-decoration: none;
-	  font-weight: normal;
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p, .countdown {
+    font-size: 1rem;
+  }
+
+  nav a {
+    margin: 5px;
+  }
+
+  .overlay {
+    width: 95%;
+    padding: 1rem;
+  }
+}
