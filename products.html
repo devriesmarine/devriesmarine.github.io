@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>de Vries Marine | Under Construction</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="products.html">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="compliance.html">Compliance</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="overlay">
+    <h1>de Vries Marine Products</h1>
+    <p>Our site is currently under construction.<br>
+       Please check back soon!</p>
+    <div class="countdown" id="countdown">Loading countdown...</div>
+  </div>
+
+  <script>
+    const countdownEl = document.getElementById("countdown");
+    const launchDate = new Date("July 1, 2025 00:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+	if (distance <= 0) {
+        countdownEl.style.display = 'none';
+        return;
+    }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+  <footer>
+	<a>©Copyright de Vries Marine, Co., 2025</a>
+  </footer>
+</html>
