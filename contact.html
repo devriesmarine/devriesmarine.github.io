@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>de Vries Marine | Under Construction</title>
+  <title>Contact | de Vries Marine</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -37,8 +37,12 @@
 	  <div class="fs-field">
 		<label class="fs-label" for="request-type">Type of Request</label>
 		<select class="fs-select" id="request-type" name="request-type" required>
-		  <option value="product-autolube">Automatic Lubricator</option>
-		  <option value="product-grease">Dredging Grease</option>
+		  <option value="product-dredge grease">Dredging Equipment Grease</option>
+		  <option value="product-db-autolube">Automatic Dredge Bucket Lubricator</option>
+		  <option value="product-cable-autolube">Automatic Cable Lubricator</option>
+		  <option value="product-slewbrg-autolube">Automatic Slewing Bearing Lubricator</option>
+		  <option value="product-hdshvbrg-autolube">Automatic Head Sheave Bearing Lubricator</option>
+		  <option value="product-gntryshvbrg-autolube">Automatic Gantry Sheave Bearing Lubricator</option>
 		  <option value="roi-calc">ROI Calculation</option>
 		  <option value="general-inquiry">General Inquiry</option>
 		</select>
@@ -63,8 +67,16 @@
 		<input class="fs-input" id="company" name="company" required />
 	  </div>
 	  <div class="fs-field">
-		<label class="fs-label" for="country">Country</label>
-		<input class="fs-input" id="country" name="country" required />
+		<label class="fs-label" for="region">Region</label>
+		<select class="fs-select" id="region" name="region" required>
+			<option value="usa">USA</option>
+			<option value="na">North America (non USA)</option>
+			<option value="nl">Netherlands</option>
+			<option value="eu">Europe (non NL)</option>
+			<option value="as">Asia</option>
+			<option value="sa">South America</option>
+			<option value="af">Africa</option>
+		</select>
 	  </div>
 	  <div class="fs-field">
 		<label class="fs-label" for="phone-number">Phone Number</label>
