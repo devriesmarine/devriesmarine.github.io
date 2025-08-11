@@ -27,6 +27,10 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: #FF4D08;
+}
+
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -110,7 +114,7 @@ footer a {
   --color-highlight: #7ecac7;
   --color-primary: #23494c;
   --color-primary-active: #122d30;
-  --color-text-default: #0f172a;
+  --color-text-default: #ffffff;
   --color-text-muted: #475569;
 
   --font-family-body: "Inter", sans-serif;
@@ -193,7 +197,7 @@ fieldset {
 }
 
 .fs-fieldset-title {
-  color: white;
+  color: var(--color-text-default);
   font-family: var(--font-family-display);
   font-size: 1.25rem;
   font-weight: 500;
@@ -209,7 +213,7 @@ fieldset {
 }
 
 .fs-label {
-  color: white;
+  color: var(--color-text-default);
   display: block;
   font-family: var(--font-family-display);
   font-size: 0.875rem;
