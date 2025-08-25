@@ -475,5 +475,24 @@ fieldset {
   text-align: center;
   white-space: nowrap;
 }
+/* Typed input and selected text in fields */
+.fs-input,
+.fs-select,
+.fs-textarea {
+  color: #000000;   /* black text */
+}
+
+/* Ensure dropdown fields show black text on white */
+.fs-select {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Ensure dropdown option list shows black text on white */
+.fs-select option {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 
 
