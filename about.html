@@ -24,8 +24,14 @@
 	<p style="color: #FF4D08;"><strong>We Deliver Uptime</strong></p>
 
   </div>
-</body>
   <footer>
-      <a>&copy; 2025 de Vries Marine. All rights reserved.</a>
+    <a>&copy; <span id="copyright-year"></span> de Vries Marine, Co.  All rights reserved.</a>
   </footer>
+
+  <script>
+
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
